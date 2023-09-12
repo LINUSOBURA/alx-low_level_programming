@@ -4,7 +4,7 @@
  * @c:  parameter to be checked in ASCII
  * Return: 0 sucess
  */
-int _islower(int c);
+int _islower(int c)
 {
 	if (c >= 97 && c <= 122)
 	{
