@@ -1,10 +1,17 @@
-#include <unistd.h>
+#include "main.h"
 /**
  * main - Entry point of the program
  * Return: (0) sucess
  */
 int main(void)
 {
-	write(2, "_putchar\n", 58);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
 	return (0);
 }
