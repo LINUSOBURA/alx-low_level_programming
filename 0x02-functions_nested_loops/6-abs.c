@@ -1,14 +1,14 @@
 #include "main.h"
 /**
  * _abs - Entry point of the program
- * @int: parameter
+ * @i: parameter
  * Return: 0 sucess
  */
-int _abs(int)
+int _abs(int i)
 {
-	if (int < 0)
+	if (i < 0)
 	{
-		int = int * -1;
+		i = i * -1;
 	}
 	return (0);
 }
