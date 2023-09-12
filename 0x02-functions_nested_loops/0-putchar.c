@@ -1,10 +1,10 @@
-#include <stdio.h>
+#include <unistd.h>
 /**
  * main - Entry point of the program
  * Return: (0) sucess
  */
 int main(void)
 {
-	fprintf(stderr, "_putchar\n");
+	write(2, "_putchar\n", 58);
 	return (0);
 }
