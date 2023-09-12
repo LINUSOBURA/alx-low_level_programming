@@ -1,16 +1,16 @@
 #include "main.h"
 /**
- * main - Entry of the code
+ * print_alphabet - Entry of the code
  * Return: 0 sucess
  */
-int main(void)
+void print_alphabet(void)
 {
-	char str[] = "abcdefghijklmnopqrstuvwxyz\n";
 	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 'a'; i <= 'z'; i++)
 	{
-		_putchar (str[i]);
+		_putchar (i);
 	}
 	return (0);
+	_putchar ('\n');
 }
