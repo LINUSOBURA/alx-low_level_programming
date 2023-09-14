@@ -1,5 +1,6 @@
 #include "main.h"
 #include "_putchar.c"
+#include "main.c"
 /**
  * print_numbers - Prints the caracters
  * Return: none
