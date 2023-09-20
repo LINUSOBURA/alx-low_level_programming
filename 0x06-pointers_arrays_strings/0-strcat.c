@@ -4,12 +4,13 @@
  * @dest: string 1
  * @src: string 2
  * Return: dest
+ * Code by Linus Obura
  */
 
 char *_strcat(char *dest, char *src)
 {
-	int dest_len;
-	int src_len;
+	int dest_len = 0;
+	int src_len = 0;
 	int i;
 
 	for (i = 0; dest[i] != '\0'; i++)
@@ -21,7 +22,3 @@ char *_strcat(char *dest, char *src)
 		dest[dest_len + i] = src[i];
 	return (dest);
 }
-
-/*
- *  Code by Linus Obura 😎
- */
