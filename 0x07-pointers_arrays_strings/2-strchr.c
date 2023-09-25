@@ -1,5 +1,4 @@
 #include "main.h"
-#define NULL ((void *)0)
 /**
  * _strchr - function to search for character occurence in a string
  * @s: the pointer to the string
@@ -9,7 +8,6 @@
  */
 char *_strchr(char *s, char c)
 {
-	
 	for (; *s != '\0'; s++)
 	{
 		if (*s == c)
@@ -17,6 +15,6 @@ char *_strchr(char *s, char c)
 			return (s);
 		}
 	}
-	return (NULL);
+	return (0);
 
 }
