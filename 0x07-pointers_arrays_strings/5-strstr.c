@@ -19,10 +19,10 @@ char *_strstr(char *haystack, char *needle)
 		char *hBegin = h, *n = needle;
 		while (*h && *n && *h == *n)
 		{
-			p1++;
-			p2++;
+			h++;
+			d++;
 		}
-		if (!*p2)
+		if (!*d)
 		{
 			return p1Begin;
 		}
