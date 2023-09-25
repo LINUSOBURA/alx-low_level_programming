@@ -20,11 +20,11 @@ char *_strstr(char *haystack, char *needle)
 		while (*h && *n && *h == *n)
 		{
 			h++;
-			d++;
+			n++;
 		}
-		if (!*d)
+		if (!*n)
 		{
-			return p1Begin;
+			return hBegin;
 		}
 		h = hBegin + 1;
 	}
