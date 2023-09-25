@@ -12,18 +12,21 @@ char *_strstr(char *haystack, char *needle)
 	{
 		return haystack;
 	}
-	char *p1 = haystack;
-    while (*p1) {
-        char *p1Begin = p1, *p2 = needle;
-        while (*p1 && *p2 && *p1 == *p2) {
-            p1++;
-            p2++;
-        }
-
-        if (!*p2) {
-            return p1Begin;
-        }
-	p1 = p1Begin + 1;
-    }
-    return NULL;
+	char *h = haystack;
+	
+	while (*h)
+	{
+		char *hBegin = h, *n = needle;
+		while (*h && *n && *h == *n)
+		{
+			p1++;
+			p2++;
+		}
+		if (!*p2)
+		{
+			return p1Begin;
+		}
+		h = hBegin + 1;
+	}
+	return (0);
 }
