@@ -5,19 +5,19 @@
  * size: size of aaray
  * Code by Linus Obura 
  */
-void print_diagsums(int *a, int size) {
-    int main_diag_sum = 0;
-    int secondary_diag_sum = 0;
-
-    for (int i = 0; i < size; i++) {
-        main_diag_sum += *(a + i * size + i);
-        secondary_diag_sum += *(a + i * size + (size - i - 1));
-    }
-
-    // Custom print function to display the results
-    print_integer(main_diag_sum);
-    putchar(',');  // Separate the two sums with a comma
-    putchar(' ');
-    print_integer(secondary_diag_sum);
-    putchar('\n');  // Newline after printing both sums
+void print_diagsums(int *a, int size)
+{
+	int main_diagonal_sum = 0;
+	int secondary_diagonal_sum = 0;
+	
+	for (int i = 0; i < size; i++)
+	{
+		main_diagonal_sum += *(a + i * size + i);
+		secondary_diagonal_sum += *(a + i * size + (size - i - 1));
+	}
+	print_integer(main_diagonal_sum);
+	_putchar(',');
+	_putchar(' ');
+	_print_integer(secondary_diagonal_sum);
+	_putchar('\n');
 }
