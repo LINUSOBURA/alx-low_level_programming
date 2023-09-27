@@ -16,10 +16,10 @@ int is_palindrome(char *s)
 }
 
 /**
- * palindroma_helper - helper to the is_palindrome function
+ * palindrome_helper - helper to the is_palindrome function
  * @start: pointer to the start of a string
  * @end: Pointer to the end of the screen
- * Retur: 0 / start /end
+ * Return: 0 / start /end
  */
 int palindrome_helper(char *start, char *end)
 {
