@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <cytpe.h>
+#include <ctype.h>
 /**
  * main - entry point of the funtion
  * @argc: arguments count
