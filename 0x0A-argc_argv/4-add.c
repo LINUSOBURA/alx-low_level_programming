@@ -2,11 +2,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 /**
- * main - entry point of the funtion
  * is_positive - function to check if number is positive
  * @str: sting characters
- * @argc: arguments count
- * @argv: arguments string
  * Return: 0
  * Code by Linus Obura
  */
