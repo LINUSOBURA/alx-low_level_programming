@@ -10,7 +10,9 @@
  */
 int is_positive(char *str)
 {
-	for (int i = 0; str[i] != '\0'; i++) 
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++) 
 	{
 		if (!isdigit(str[i]))
 		{
