@@ -15,10 +15,8 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	if (New_string == NULL)
-		return (NULL);
-
-	strcpy(New_string, str);
+	if (New_string != NULL)
+		strcpy(New_string, str);
 
 	return (New_string);
 
