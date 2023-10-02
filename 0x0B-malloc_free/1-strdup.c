@@ -18,6 +18,8 @@ char *_strdup(char *str)
 	if (New_string != NULL)
 		strcpy(New_string, str);
 
+	if (New_string == NULL)
+		return (NULL);
 	return (New_string);
 
 }
