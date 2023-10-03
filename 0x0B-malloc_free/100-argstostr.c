@@ -3,8 +3,8 @@
 #include <string.h>
 /**
 * argstostr - function to concatenate all arguments into a string
-* @ac - arguments length
-* @av - arguments pointer
+* @ac: arguments length
+* @av: arguments pointer
 * Return: concatenated string
 * Code by Linus Obura
 */
@@ -20,7 +20,7 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		length += strlen(av[i] + 1);
+		length += strlen(av[i] + 1;
 	}
 
 	str = malloc(length + 1);
