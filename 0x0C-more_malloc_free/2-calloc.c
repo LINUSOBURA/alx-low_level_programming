@@ -19,13 +19,13 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	allocate = malloc(size * nmemb);
 
-	for (i = 0; i < (size * nmemb); i++)
-		allocate[i] = 0;
-
 	if (allocate == NULL)
 	{
 		return (NULL);
 	}
+
+	for (i = 0; i < (size * nmemb); i++)
+		allocate[i] = 0;
 
 	return ((void *)allocate);
 }
