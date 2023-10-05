@@ -9,7 +9,8 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *allocate;
+	char *allocate;
+	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 	{
@@ -18,10 +19,13 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	allocate = malloc(size * nmemb);
 
+	for (i = 0; i < (size * nmemb); i++)
+		allocate[i] = 0;
+
 	if (allocate == NULL)
 	{
 		return (NULL);
 	}
 
-	return (allocate);
+	return ((void *)allocate);
 }
