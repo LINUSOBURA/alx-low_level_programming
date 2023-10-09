@@ -1,7 +1,12 @@
 #include "dog.h"
 #include <string.h>
 #include <stdlib.h>
-
+/**
+* new_dog - function to create a new dog
+* @name: dog's name
+* @age: dogs age
+* @owner: dogs owner
+*/
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *newDog;
