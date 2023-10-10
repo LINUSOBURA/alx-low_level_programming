@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main - Entry point 
+ * main - Entry point
  * Return: 0
  * Code by Linus Obura
  */
-int main()
+int main(void)
 {
 	printf(__FILE__);
+	printf("\n")
 	return (0);
 }
