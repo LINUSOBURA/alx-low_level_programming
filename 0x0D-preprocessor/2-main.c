@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-#define name __FILE__
 /**
  * main - Entry point 
  * Return: 0
@@ -8,6 +7,6 @@
  */
 int main()
 {
-	printf(name);
+	printf(__FILE__'\n');
 	return (0);
 }
