@@ -1,4 +1,5 @@
-#include "function_pointer.h"
+#include "function_pointers.h"
+#include <stdio.h>
 /**
 * print_name - function that prints a name;
 * @name: pointer to a string name
@@ -19,5 +20,5 @@ void print_name(char *name, void (*f)(char *))
 */
 void f(char c)
 {
-	printf(c);
+	printf("%c", c);
 }
