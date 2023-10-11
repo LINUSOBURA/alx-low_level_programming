@@ -18,5 +18,5 @@ void print_name(char *name, void (*f)(char *))
 */
 void f(char c)
 {
-	_putchar(c);
+	printf("%c", c);
 }
