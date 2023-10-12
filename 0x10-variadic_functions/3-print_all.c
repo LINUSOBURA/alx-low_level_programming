@@ -36,6 +36,8 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", va_arg(params, char *));
 				break;
+			default:
+				continue;
 		}
 		separator = ", ";
 	}
