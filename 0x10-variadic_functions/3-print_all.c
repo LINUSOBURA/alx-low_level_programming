@@ -42,6 +42,8 @@ void print_all(const char * const format, ...)
 					break;
 				}
 			default:
+				va_arg(params, void *);
+				separator = "";      
 				continue;
 		}
 		separator = ", ";
