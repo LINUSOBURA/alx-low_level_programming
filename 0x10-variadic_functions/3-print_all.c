@@ -29,14 +29,16 @@ void print_all(const char * const format, ...)
 				printf("%f", (float)va_arg(params, double));
 				break;
 			case 's':
-				char *temp = va_arg(params, char *);
-				if (!temp)
 				{
-					printf("(nil)");
+					char *temp = va_arg(params, char *);
+					if (!temp)
+					{
+						printf("(nil)");
+					}
+					else:
+						printf("%s", temp);
+					break;
 				}
-				else:
-					printf("%s", temp);
-				break;
 			default:
 				continue;
 		}
