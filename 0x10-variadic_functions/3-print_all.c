@@ -35,7 +35,7 @@ void print_all(const char * const format, ...)
 					{
 						printf("(nil)");
 					}
-					else:
+					else
 					{
 						printf("%s", temp);
 					}
