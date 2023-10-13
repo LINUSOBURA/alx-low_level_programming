@@ -26,7 +26,7 @@ void print_all(const char * const format, ...)
 				printf("%d", va_arg(params, int));
 				break;
 			case 'f':
-				printf("%f", (float)va_arg(params, double));
+				printf("%lf", va_arg(params, double));
 				break;
 			case 's':
 				{
@@ -41,9 +41,7 @@ void print_all(const char * const format, ...)
 					}
 					break;
 				}
-			default:
-				va_arg(params, void *);
-				separator = "";      
+			default:      
 				continue;
 		}
 		separator = ", ";
