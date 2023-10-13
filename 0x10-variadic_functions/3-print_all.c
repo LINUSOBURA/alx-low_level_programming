@@ -10,26 +10,30 @@ void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
 	va_list params;
-	char *separator = "";
+	int separator = 0;
 
 	va_start(params, format);
 
 	while (format[i])
 	{
-		printf("%s", separator);
+		if (separator)
+		{
+			printf(", ");
+			separator = 0;
+		}
 		switch (format[i++])
 		{
 			case 'c':
 				printf("%c", (char)va_arg(params, int));
-				separator = ", ";
+				separator = 1;
 				break;
 			case 'i':
 				printf("%d", va_arg(params, int));
-				separator = ", ";
+				separator = 1;
 				break;
 			case 'f':
 				printf("%f", va_arg(params, double));
-				separator = ", ";
+				separator = 1;
 				break;
 			case 's':
 				{
@@ -42,7 +46,7 @@ void print_all(const char * const format, ...)
 					{
 						printf("%s", temp);
 					}
-					separator = ", ";
+					separator = 1;
 					break;
 				}
 			default:      
