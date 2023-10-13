@@ -21,12 +21,15 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				printf("%c", (char)va_arg(params, int));
+				separator = ", ";
 				break;
 			case 'i':
 				printf("%d", va_arg(params, int));
+				separator = ", ";
 				break;
 			case 'f':
 				printf("%f", va_arg(params, double));
+				separator = ", ";
 				break;
 			case 's':
 				{
@@ -39,12 +42,12 @@ void print_all(const char * const format, ...)
 					{
 						printf("%s", temp);
 					}
+					separator = ", ";
 					break;
 				}
 			default:      
 				continue;
 		}
-		separator = ", ";
 	}
 	va_end(params);
 	printf("\n");
