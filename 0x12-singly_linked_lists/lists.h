@@ -2,6 +2,9 @@
 #define LISTS_H
 #include <stddef.h>
 #include <stdio.h>
+/**
+* list_s: singly liked list
+*/
 typedef struct list_s
 {
 	char *str;
