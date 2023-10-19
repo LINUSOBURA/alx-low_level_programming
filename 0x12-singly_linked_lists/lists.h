@@ -3,11 +3,14 @@
 #include <stddef.h>
 #include <stdio.h>
 /**
-* list_s - singly liked list
+* struct list_s - singly liked list
+* @len: integer
+* @next: pointer to the next element in the list
+* Description: singly linked list node structure
+* Code by Linus Obura
 */
 typedef struct list_s
 {
-	char *str;
 	unsigned int len;
 	struct list_s *next;
 } list_t;
