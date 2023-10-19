@@ -19,7 +19,7 @@ list_t *createNewNode(const char *str)
 	if (newNode->str == NULL)
 	{
 		free(newNode);
-		return (newNode);
+		return (NULL);
 	}
 
 	newNode->len =strlen(str);
