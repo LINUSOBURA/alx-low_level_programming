@@ -3,7 +3,7 @@
 /**
  * print_list - function to print elements of a list_t
  * @h: head od the list
- * Retun: number of nodes
+ * Return: number of nodes
  */
 size_t print_list(const list_t *h)
 {
