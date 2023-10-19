@@ -3,7 +3,7 @@
 #include <stddef.h>
 #include <stdio.h>
 /**
-* list_s: singly liked list
+* list_s - singly liked list
 */
 typedef struct list_s
 {
