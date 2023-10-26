@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* binary_to_int - function to convert binary numbers to integer
+* binary_to_uint - function to convert binary numbers to integer
 * @b: string of 0 and 1
 * Return: decimals
 * Code by Linus Obura
