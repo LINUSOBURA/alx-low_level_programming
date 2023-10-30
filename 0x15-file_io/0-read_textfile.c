@@ -3,7 +3,7 @@
  * read_textfile - function to read a text file and print it
  * @filename: name of the file to be opened
  * @letters: letters in the file to be printed
- * Returns: the number of letters it could read and print
+ * Return: the number of letters it could read and print
  * Code by Linus Obura
  */
 
