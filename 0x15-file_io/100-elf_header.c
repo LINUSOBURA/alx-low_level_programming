@@ -3,13 +3,13 @@
 
 int check_elf(unsigned char *e_ident)
 {
-	return e_ident[EI_MAG0] == ELFMAG0 &&
+	return (e_ident[EI_MAG0] == ELFMAG0 &&
 		e_ident[EI_MAG1] == ELFMAG1 &&
 		e_ident[EI_MAG2] == ELFMAG2 &&
-		e_ident[EI_MAG3] == ELFMAG3;
+		e_ident[EI_MAG3] == ELFMAG3);
 }
 
-const char* get_e_type_desc(int e_type)
+const char *get_e_type_desc(int e_type)
 {
 	switch (e_type)
 	{
@@ -35,13 +35,18 @@ void display_elf_header(Elf64_Ehdr elf_header)
 	printf("Class:                             %s\n",
 		elf_header.e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
 	printf("Data:                              %s\n",
-		elf_header.e_ident[EI_DATA] == ELFDATA2LSB ? "2's complement, little endian" : "2's complement, big endian");
+		elf_header.e_ident[EI_DATA] == ELFDATA2LSB ?
+		"2's complement, little endian" : "2's complement, big endian");
 	printf("Version:                           %d %s\n",
-		elf_header.e_ident[EI_VERSION], (elf_header.e_ident[EI_VERSION] == EV_CURRENT ? "(current)" : ""));
+		elf_header.e_ident[EI_VERSION], (elf_header.e_ident[EI_VERSION] == EV_CURRENT ?
+		"(current)" : ""));
 	printf("OS/ABI:                            UNIX - System V\n");
-	printf("ABI Version:                       %d\n", elf_header.e_ident[EI_OSABI]);
-	printf("Type:                              %s\n", get_e_type_desc(elf_header.e_type));
-	printf("Entry point address:               %lx\n", (unsigned long)elf_header.e_entry);
+	printf("ABI Version:                       %d\n",
+		elf_header.e_ident[EI_OSABI]);
+	printf("Type:                              %s\n",
+		get_e_type_desc(elf_header.e_type));
+	printf("Entry point address:               %lx\n",
+		(unsigned long)elf_header.e_entry);
 }
 
 int main(int argc, char *argv[])
