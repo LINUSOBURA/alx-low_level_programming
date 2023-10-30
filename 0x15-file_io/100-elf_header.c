@@ -11,8 +11,10 @@ int check_elf(unsigned char *e_ident)
 
 void display_elf_header(Elf64_Ehdr elf_header)
 {
+	int i;
+
 	printf("Magic:   ");
-	for (int i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x ", elf_header.e_ident[i]);
 	}
@@ -31,20 +33,22 @@ void display_elf_header(Elf64_Ehdr elf_header)
 
 int main(int argc, char *argv[])
 {
+	int fd;
+	Elf64_Ehdr elf_header;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: elf_header elf_filename\n");
 		exit(98);
 	}
 	
-	int fd = open(argv[1], O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
 		perror("Error opening file");
 		exit(98);
 	}
 
-	Elf64_Ehdr elf_header;
 	if (read(fd, &elf_header, sizeof(Elf64_Ehdr)) != sizeof(Elf64_Ehdr))
 	{
 		fprintf(stderr, "Error reading ELF header\n");
