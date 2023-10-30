@@ -9,6 +9,19 @@ int check_elf(unsigned char *e_ident)
 		e_ident[EI_MAG3] == ELFMAG3;
 }
 
+const char* get_e_type_desc(int e_type)
+{
+	switch (e_type)
+	{
+		case ET_NONE: return "NONE (No file type)";
+		case ET_REL: return "REL (Relocatable file)";
+		case ET_EXEC: return "EXEC (Executable file)";
+		case ET_DYN: return "DYN (Shared object file)";
+		case ET_CORE: return "CORE (Core file)";
+		default: return "UNKNOWN";
+	}
+}
+
 void display_elf_header(Elf64_Ehdr elf_header)
 {
 	int i;
@@ -27,7 +40,7 @@ void display_elf_header(Elf64_Ehdr elf_header)
 		elf_header.e_ident[EI_VERSION], (elf_header.e_ident[EI_VERSION] == EV_CURRENT ? "(current)" : ""));
 	printf("OS/ABI:                            UNIX - System V\n");
 	printf("ABI Version:                       %d\n", elf_header.e_ident[EI_OSABI]);
-	printf("Type:                              %d\n", elf_header.e_type);
+	printf("Type:                              %s\n", get_e_type_desc(elf_header.e_type));
 	printf("Entry point address:               %lx\n", (unsigned long)elf_header.e_entry);
 }
 
@@ -39,7 +52,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: elf_header elf_filename\n");
-		exit(98);
+		exit(97);
 	}
 	
 	fd = open(argv[1], O_RDONLY);
