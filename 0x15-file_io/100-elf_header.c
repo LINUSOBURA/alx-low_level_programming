@@ -1,6 +1,10 @@
 #include "main.h"
 #include <elf.h>
-
+/**
+* check_elf - function to check elf
+* @e_ident: ident
+* Return: ident
+*/
 int check_elf(unsigned char *e_ident)
 {
 	return (e_ident[EI_MAG0] == ELFMAG0 &&
@@ -8,7 +12,11 @@ int check_elf(unsigned char *e_ident)
 		e_ident[EI_MAG2] == ELFMAG2 &&
 		e_ident[EI_MAG3] == ELFMAG3);
 }
-
+/**
+* get_e_type_desc - function to check elf
+* @e_type: ident
+* Return: ident
+*/
 const char *get_e_type_desc(int e_type)
 {
 	switch (e_type)
@@ -21,7 +29,11 @@ const char *get_e_type_desc(int e_type)
 		default: return "UNKNOWN";
 	}
 }
-
+/**
+* get_e_type_desc - function to check elf
+* @e_type: ident
+* Return: ident
+*/
 void display_elf_header(Elf64_Ehdr elf_header)
 {
 	int i;
@@ -38,7 +50,8 @@ void display_elf_header(Elf64_Ehdr elf_header)
 		elf_header.e_ident[EI_DATA] == ELFDATA2LSB ?
 		"2's complement, little endian" : "2's complement, big endian");
 	printf("Version:                           %d %s\n",
-		elf_header.e_ident[EI_VERSION], (elf_header.e_ident[EI_VERSION] == EV_CURRENT ?
+		elf_header.e_ident[EI_VERSION],
+		(elf_header.e_ident[EI_VERSION] == EV_CURRENT ?
 		"(current)" : ""));
 	printf("OS/ABI:                            UNIX - System V\n");
 	printf("ABI Version:                       %d\n",
@@ -59,7 +72,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: elf_header elf_filename\n");
 		exit(97);
 	}
-	
+
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
@@ -79,9 +92,9 @@ int main(int argc, char *argv[])
 		close(fd);
 		exit(98);
 	}
-	
+
 	display_elf_header(elf_header);
 	close(fd);
-	return 0;
+	return (0);
 }
 
