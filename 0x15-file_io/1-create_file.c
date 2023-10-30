@@ -1,8 +1,4 @@
 #include "main.h"
-#include <fcntl.h>
-#include <string.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 /**
  * create_file - function to create a file
  * @filename: name of the file to be created
