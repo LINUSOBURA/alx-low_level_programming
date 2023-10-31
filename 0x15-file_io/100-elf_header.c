@@ -36,9 +36,11 @@ const char *get_e_type_desc(int e_type)
 */
 void display_elf_header(Elf64_Ehdr elf_header)
 {
+	int i;
+
 	printf("ELF Header:\n");
 	printf("  Magic:   ");
-	for (int i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x ", elf_header.e_ident[i]);
 	}
