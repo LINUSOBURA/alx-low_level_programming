@@ -36,29 +36,39 @@ const char *get_e_type_desc(int e_type)
 */
 void display_elf_header(Elf64_Ehdr elf_header)
 {
-	int i;
-
-	printf("Magic:   ");
-	for (i = 0; i < EI_NIDENT; i++)
+	printf("ELF Header:\n");
+	printf("  Magic:   ");
+	for (int i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x ", elf_header.e_ident[i]);
 	}
 	printf("\n");
-	printf("Class:                             %s\n",
+	printf("  Class:                             %s\n",
 		elf_header.e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
-	printf("Data:                              %s\n",
+	printf("  Data:                              %s\n",
 		elf_header.e_ident[EI_DATA] == ELFDATA2LSB ?
 		"2's complement, little endian" : "2's complement, big endian");
-	printf("Version:                           %d %s\n",
+	printf("  Version:                           %d %s\n",
 		elf_header.e_ident[EI_VERSION],
 		(elf_header.e_ident[EI_VERSION] == EV_CURRENT ?
 		"(current)" : ""));
-	printf("OS/ABI:                            UNIX - System V\n");
-	printf("ABI Version:                       %d\n",
-		elf_header.e_ident[EI_OSABI]);
-	printf("Type:                              %s\n",
+	printf("  OS/ABI:                            ");
+	switch (elf_header.e_ident[EI_OSABI])
+	{
+		case ELFOSABI_SYSV:
+			printf("UNIX - System V\n");
+			break;
+		case ELFOSABI_NETBSD:
+			printf("UNIX - NetBSD\n");
+			break;
+		default:
+			printf("UNKNOWN\n");
+	}
+	printf("  ABI Version:                       %d\n",
+		elf_header.e_ident[EI_ABIVERSION]);
+	printf("  Type:                              %s\n",
 		get_e_type_desc(elf_header.e_type));
-	printf("Entry point address:               %lx\n",
+	printf("  Entry point address:               0x%lx\n",
 		(unsigned long)elf_header.e_entry);
 }
 
