@@ -76,6 +76,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			{
 				*h = newnode;
 			}
+
+			current->prev = newnode;
 		}
 		else
 		{
@@ -90,6 +92,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			newnode->prev = lastnode;
 		}
 	}
-
 	return (newnode);
 }
