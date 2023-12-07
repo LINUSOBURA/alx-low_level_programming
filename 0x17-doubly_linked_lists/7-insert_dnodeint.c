@@ -88,8 +88,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				lastnode = lastnode->next;
 			}
 
-			lastnode->next = newnode;
 			newnode->prev = lastnode;
+			lastnode->next = newnode;
 		}
 	}
 	return (newnode);
