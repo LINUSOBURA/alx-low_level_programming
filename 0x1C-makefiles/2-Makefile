@@ -3,9 +3,7 @@ SRC := main.c school.c
 OBJ := main.o scool.o
 NAME = $@
 
-all: school
-
-school: main.o school.o
+all: main.o school.o
 	${CC} $^ -o ${NAME}
 
 main.o: main.c
