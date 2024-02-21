@@ -15,6 +15,6 @@ def island_perimeter(grid):
                 for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
                     x, y = i + dx, j + dy
                     if x < 0 or x >= rows or y < 0 or\
-                    y >= cols or grid[x][y] == 0:
+                        y >= cols or grid[x][y] == 0:
                         perimeter += 1
     return perimeter
