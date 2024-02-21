@@ -11,6 +11,7 @@ ${NAME}: ${OBJ}
 
 %.o: %.c
 	${CC} -c $< -o $@
+
 clean: 
 	${RM} *~ ${NAME}
 
